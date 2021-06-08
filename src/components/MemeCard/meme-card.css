@@ -1,0 +1,52 @@
+.meme-card {
+	border-radius: 10px;
+	background-color: var(--text-light);
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.meme-card * {
+	color: var(--text-dark);
+}
+
+.meme-card > img {
+	width: 100%;
+}
+
+.meme-card-content {
+	padding: 12px;
+}
+
+.meme-card-content > h3 {
+	font-weight: 400;
+	font-size: 1.4rem;
+	margin: 12px 0;
+}
+
+.meme-card-footer {
+	display: flex;
+	justify-content: space-between;
+	font-size: 1.1rem;
+	align-items: center;
+	white-space: nowrap;
+}
+
+.meme-card-footer > section {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 50%;
+}
+
+.meme-card-footer-upvotes {
+	background-color: var(--theme);
+	padding: 8px 15px;
+	border-radius: 20px;
+	margin-left: 5px;
+}
+
+.meme-card-footer-upvotes *,
+.meme-card-footer-upvotes {
+	color: var(--text-light);
+}

@@ -1,0 +1,34 @@
+.memes-viewer {
+	width: 90%;
+	margin: auto;
+	padding: 20px;
+	border-radius: 12px;
+	margin-top: 30px;
+	background-color: var(--bg-dark);
+}
+
+.memes-viewer-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100px;
+	padding: 0 6px;
+	background-color: var(--bg-dark-transparent);
+	backdrop-filter: blur(10px);
+	position: sticky;
+	left: 0px;
+	top: 00px;
+}
+
+.memes-viewer-header h3 {
+	font-size: 1.4rem;
+	color: var(--theme);
+}
+
+.memes-viewer-content {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(25s0px, 1fr));
+	/* grid-auto-flow: dense; */
+	grid-gap: 20px;
+	align-items: start;
+}

@@ -18,6 +18,19 @@
 	cursor: pointer;
 }
 
+.core-button-small {
+	height: 32px;
+	width: 100%;
+}
+
+.core-button-red {
+	background-color: var(--red);
+}
+
+.core-button-green {
+	background-color: var(--green);
+}
+
 .core-page {
 	min-height: 100vh;
 	position: relative;

@@ -1,8 +1,22 @@
 import React from "react";
 import "./core-ui.css";
 
-export const Button = ({ className = "", ...props }) => {
-	return <button className={`core-button ${className}`} {...props} />;
+export const Button = ({
+	className = "",
+	red = false,
+	green = false,
+	small = false,
+	...props
+}) => {
+	return (
+		<button
+			className={`core-button ${small ? "core-button-small" : ""}
+			${red ? "core-button-red" : ""} ${
+				green ? "core-button-green" : ""
+			}${className}`}
+			{...props}
+		/>
+	);
 };
 
 const Footer = () => {

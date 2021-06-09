@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { FETCH_MEMES_URL } from "../../urls";
-import MemesViewer from "../MemesViewer";
+import AllMemesView from "../AllMemesView";
+import SelectedMemesView from "../SelectedMemesView";
 
 const getMemes = async () => {
 	try {
@@ -22,8 +23,6 @@ const getMemes = async () => {
 const Memes = () => {
 	const [memes, setMemes] = useState([]);
 	const mounted = useRef(true);
-
-	const [selected, setSelected] = useState([]);
 
 	const [response, setResponse] = useState({
 		loading: false,
@@ -48,8 +47,35 @@ const Memes = () => {
 		return () => (mounted.current = false);
 	}, [addMemes]);
 
+	const handleMemeToggle = (url) => {
+		setMemes((memes) => {
+			const index = memes.findIndex((meme) => meme.url === url);
+			if (index === -1) {
+				return memes;
+			}
+			return [
+				...memes.slice(0, index),
+				{ ...memes[index], selected: !memes[index].selected },
+				...memes.slice(index + 1),
+			];
+		});
+	};
+
 	return (
-		<MemesViewer memes={memes} response={response} onLoadMore={addMemes} />
+		<>
+			<SelectedMemesView
+				memes={memes}
+				response={response}
+				onLoadMore={addMemes}
+				onMemeToggle={handleMemeToggle}
+			/>
+			<AllMemesView
+				memes={memes}
+				response={response}
+				onLoadMore={addMemes}
+				onMemeToggle={handleMemeToggle}
+			/>
+		</>
 	);
 };
 

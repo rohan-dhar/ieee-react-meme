@@ -1,14 +1,12 @@
 .meme-card {
+	flex: 1 0 260px;
 	border-radius: 10px;
 	background-color: var(--text-light);
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-}
-
-.meme-card * {
-	color: var(--text-dark);
+	margin: 12px;
 }
 
 .meme-card > img {
@@ -41,6 +39,7 @@
 
 .meme-card-footer-upvotes {
 	background-color: var(--theme);
+	opacity: 0.8;
 	padding: 8px 15px;
 	border-radius: 20px;
 	margin-left: 5px;
@@ -49,4 +48,14 @@
 .meme-card-footer-upvotes *,
 .meme-card-footer-upvotes {
 	color: var(--text-light);
+}
+
+.meme-card-footer-action {
+	margin-top: 20px;
+}
+
+.meme-card-footer-action > a {
+	font-weight: 500;
+	color: var(--theme);
+	margin-left: 12px;
 }

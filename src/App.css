@@ -8,9 +8,9 @@
 	--text-light: rgb(255, 255, 255);
 
 	--blue: rgb(58 128 255);
-	--theme: #727dff;
+	--theme: #5c87ff;
 	--red: #ff5b68;
-	--green: rgb(70, 236, 153);
+	--green: rgb(57, 216, 168);
 
 	--font: Poppins;
 	font-size: 10pt;
@@ -24,5 +24,5 @@
 }
 
 body {
-	background-color: var(--bg);
+	background-color: var(--theme);
 }

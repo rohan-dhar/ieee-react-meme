@@ -1,34 +1,39 @@
-.memes-viewer {
+.memes-view {
 	width: 90%;
 	margin: auto;
-	padding: 20px;
+	padding: 0 25px;
 	border-radius: 12px;
 	margin-top: 30px;
 	background-color: var(--bg-dark);
 }
 
-.memes-viewer-header {
+.memes-view-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 100px;
+	height: 105px;
 	padding: 0 6px;
 	background-color: var(--bg-dark-transparent);
+	/* background-color: red; */
 	backdrop-filter: blur(10px);
 	position: sticky;
 	left: 0px;
 	top: 00px;
 }
 
-.memes-viewer-header h3 {
+.memes-view-header h3 {
 	font-size: 1.4rem;
 	color: var(--theme);
 }
 
-.memes-viewer-content {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(25s0px, 1fr));
-	/* grid-auto-flow: dense; */
-	grid-gap: 20px;
-	align-items: start;
+.memes-view-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	padding-bottom: 25px;
+}
+
+.memes-view-nowrap .memes-view-content {
+	overflow: auto;
+	flex-wrap: nowrap;
 }

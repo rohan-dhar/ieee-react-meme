@@ -1,7 +1,7 @@
 .meme-card {
 	position: relative;
 	flex: 1 0 260px;
-	max-width: 400px;
+	max-width: 300px;
 	border-radius: 15px;
 	background-color: var(--text-light);
 	overflow: hidden;
@@ -11,6 +11,8 @@
 	margin: 12px;
 	padding: 7px;
 	box-shadow: 0px 4px 20px 3px rgba(0, 0, 0, 0.04);
+
+	transition: opacity 0.2, transform 0.2s;
 }
 
 .meme-card-hero > img {
@@ -58,12 +60,6 @@
 
 .meme-card-footer-action {
 	margin-top: 20px;
-}
-
-.meme-card-footer-action > a {
-	font-weight: 500;
-	color: var(--theme);
-	margin-left: 12px;
 }
 
 .meme-card-select-button {

@@ -31,16 +31,17 @@ const MemesView = ({
 					</Button>
 				)}
 			</header>
-			<main className="memes-view-content">
-				{Array.isArray(memes) &&
-					memes.map((meme) => (
+			{Array.isArray(memes) && memes.length > 0 && (
+				<main className="memes-view-content">
+					{memes.map((meme) => (
 						<MemeCard
 							onMemeToggle={onMemeToggle}
-							key={meme.url}
+							key={meme.id}
 							{...meme}
 						/>
 					))}
-			</main>
+				</main>
+			)}
 		</main>
 	);
 };

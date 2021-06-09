@@ -5,17 +5,15 @@ import "./meme-card.css";
 const MemeCard = ({
 	url,
 	title,
-	added,
-	onSelect,
 	ups,
 	author,
 	onMemeToggle,
 	selected,
-	postUrl,
-	...props
+	postLink,
+	id,
 }) => {
 	return (
-		<section className="meme-card" {...props}>
+		<section className="meme-card">
 			<main className="meme-card-hero">
 				<img src={url} alt={title} />
 			</main>
@@ -30,13 +28,19 @@ const MemeCard = ({
 					<section className="meme-card-footer-upvotes">
 						<b>{ups}</b> 👍
 					</section>
-					<a href={postUrl}>See in reddit 👉</a>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href={postLink}
+					>
+						See in reddit 👉
+					</a>
 				</footer>
 				<button
 					className={`meme-card-select-button ${
 						selected ? "meme-card-select-button-selected" : ""
 					}`}
-					onClick={() => onMemeToggle(url)}
+					onClick={() => onMemeToggle(id)}
 				>
 					{selected ? "✅  Selected" : "Select"}
 				</button>

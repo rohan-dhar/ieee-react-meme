@@ -24,6 +24,8 @@ const Memes = () => {
 	const [memes, setMemes] = useState([]);
 	const mounted = useRef(true);
 
+	const lastId = useRef(0);
+
 	const [response, setResponse] = useState({
 		loading: false,
 		error: false,
@@ -36,7 +38,16 @@ const Memes = () => {
 		if (memeResponse.success) {
 			setResponse({ error: true, loading: false });
 		} else {
-			setMemes((memes) => [...memes, ...memeResponse.data.memes]);
+			setMemes((memes) => [
+				...memes,
+				...memeResponse.data.memes.map((meme, index) => ({
+					...meme,
+					id: lastId.current + index,
+				})),
+			]);
+
+			lastId.current += memeResponse.data.memes.length;
+
 			setResponse({ error: false, loading: false });
 		}
 	}, []);
@@ -47,9 +58,9 @@ const Memes = () => {
 		return () => (mounted.current = false);
 	}, [addMemes]);
 
-	const handleMemeToggle = (url) => {
+	const handleMemeToggle = (id) => {
 		setMemes((memes) => {
-			const index = memes.findIndex((meme) => meme.url === url);
+			const index = memes.findIndex((meme) => meme.id === id);
 			if (index === -1) {
 				return memes;
 			}
@@ -66,7 +77,6 @@ const Memes = () => {
 			<SelectedMemesView
 				memes={memes}
 				response={response}
-				onLoadMore={addMemes}
 				onMemeToggle={handleMemeToggle}
 			/>
 			<AllMemesView

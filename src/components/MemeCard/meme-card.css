@@ -1,16 +1,22 @@
 .meme-card {
+	position: relative;
 	flex: 1 0 260px;
-	border-radius: 10px;
+	max-width: 400px;
+	border-radius: 15px;
 	background-color: var(--text-light);
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	margin: 12px;
+	padding: 7px;
+	box-shadow: 0px 4px 20px 3px rgba(0, 0, 0, 0.04);
 }
 
-.meme-card > img {
+.meme-card-hero > img {
 	width: 100%;
+	border-radius: 14px;
+	box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.08);
 }
 
 .meme-card-content {
@@ -19,8 +25,8 @@
 
 .meme-card-content > h3 {
 	font-weight: 400;
-	font-size: 1.4rem;
-	margin: 12px 0;
+	font-size: 1.2rem;
+	margin: 6px 0;
 }
 
 .meme-card-footer {
@@ -34,13 +40,13 @@
 .meme-card-footer > section {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	max-width: 50%;
+	max-width: 100%;
 }
 
 .meme-card-footer-upvotes {
 	background-color: var(--theme);
 	opacity: 0.8;
-	padding: 8px 15px;
+	padding: 4px 15px;
 	border-radius: 20px;
 	margin-left: 5px;
 }
@@ -58,4 +64,24 @@
 	font-weight: 500;
 	color: var(--theme);
 	margin-left: 12px;
+}
+
+.meme-card-select-button {
+	height: 32px;
+	width: 100%;
+	line-height: 24px;
+	border: 2px solid var(--theme);
+	color: var(--theme);
+	background-color: transparent;
+	border-radius: 20px;
+	top: 20px;
+	left: 20px;
+	text-transform: uppercase;
+	padding: 3px 20px;
+	margin-top: 10px;
+}
+
+.meme-card-select-button-selected {
+	border-color: var(--green);
+	color: var(--green);
 }

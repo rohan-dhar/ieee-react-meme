@@ -1,7 +1,7 @@
 :root {
-	--bg: #1a1a1f;
-	--bg-light: #111114;
-	--bg-dark: #111114;
+	--bg: #fff;
+	--bg-dark: #f5f5f5;
+
 	--bg-dark-transparent: #11111499;
 	--text: rgba(255, 255, 255, 0.8);
 	--text-dark: #222;
@@ -10,9 +10,9 @@
 	--blue: rgb(58 128 255);
 	--theme: #5c87ff;
 	--red: #ff5b68;
-	--green: rgb(57, 216, 168);
+	--green: rgb(28 187 110);
 
-	--font: Poppins;
+	--font: Inter;
 	font-size: 10pt;
 }
 
@@ -24,5 +24,5 @@
 }
 
 body {
-	background-color: var(--theme);
+	background-color: var(--bg);
 }

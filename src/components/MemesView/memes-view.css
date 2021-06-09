@@ -13,8 +13,8 @@
 	align-items: center;
 	height: 105px;
 	padding: 0 6px;
-	background-color: var(--bg-dark-transparent);
-	/* background-color: red; */
+	background-color: var(--bg-dark);
+	z-index: 10;
 	backdrop-filter: blur(10px);
 	position: sticky;
 	left: 0px;

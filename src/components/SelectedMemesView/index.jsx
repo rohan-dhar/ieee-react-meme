@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MemesView from "../MemesView";
+import "./selected-memes-view.css";
 
 const SelectedMemesView = ({ memes, ...props }) => {
 	const [open, setOpen] = useState(false);
@@ -12,6 +13,7 @@ const SelectedMemesView = ({ memes, ...props }) => {
 			heading={`${selectedMemes.length} memes selected`}
 			buttonText={open ? "Hide" : "Show"}
 			onButtonClick={toggleShow}
+			className="selected-memes-view"
 			memes={open ? selectedMemes : []}
 			noWrap
 			{...props}

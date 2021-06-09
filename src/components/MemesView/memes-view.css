@@ -18,7 +18,7 @@
 	backdrop-filter: blur(10px);
 	position: sticky;
 	left: 0px;
-	top: 00px;
+	top: 0px;
 }
 
 .memes-view-header h3 {
@@ -30,10 +30,19 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-start;
+	justify-content: center;
 	padding-bottom: 25px;
 }
 
 .memes-view-nowrap .memes-view-content {
 	overflow: auto;
 	flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 500px) {
+	.memes-view {
+		width: 95%;
+		padding: 0 6px;
+		margin-top: 15px;
+	}
 }

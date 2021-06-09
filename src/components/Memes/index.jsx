@@ -38,16 +38,17 @@ const Memes = () => {
 		if (memeResponse.success) {
 			setResponse({ error: true, loading: false });
 		} else {
-			setMemes((memes) => [
-				...memes,
-				...memeResponse.data.memes.map((meme, index) => ({
-					...meme,
-					id: lastId.current + index,
-				})),
-			]);
+			for (let i = 0; i < 1; i++) {
+				setMemes((memes) => [
+					...memes,
+					...memeResponse.data.memes.map((meme, index) => ({
+						...meme,
+						id: lastId.current + index,
+					})),
+				]);
 
-			lastId.current += memeResponse.data.memes.length;
-
+				lastId.current += memeResponse.data.memes.length;
+			}
 			setResponse({ error: false, loading: false });
 		}
 	}, []);

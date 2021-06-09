@@ -2,7 +2,7 @@ import { Page } from "./components/CoreUI";
 
 import Memes from "./components/Memes";
 
-import "./app.css";
+import "./index.css";
 
 const App = () => {
 	return (
